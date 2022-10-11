@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useState } from "react";
+import Ubicaciones from "./components/ubicacion/Ubicaciones";
+import UbicacionForm from "./components/formulario/UbicacionForm";
+import { UbicacionesContext } from "./context/UbicacionesContext";
 
+const data = [
+  {
+    id: 2,
+    nombre: 'hola',
+    latitud: '643876473',
+    longitud: '476346374'
+  }
+]
 function App() {
+  const [ ubicaciones, setUbicaciones ] = useState(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UbicacionesContext.Provider value={{ ubicaciones, setUbicaciones }}>
+      <div className="App">
+        <header>
+          <h1>Proyecto Tarjeta de Ubicaciones</h1>
+        </header>
+        <div className="main-container">
+          <UbicacionForm />
+          <Ubicaciones ubicaciones={ubicaciones} />
+        </div>
+      </div>
+    </UbicacionesContext.Provider>
   );
 }
 

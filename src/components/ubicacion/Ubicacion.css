@@ -1,0 +1,16 @@
+.ubicacion-container {
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+    border-radius: 10px;
+    padding: 25px;
+  }
+  .ubicacion-container:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .ubicacion {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
