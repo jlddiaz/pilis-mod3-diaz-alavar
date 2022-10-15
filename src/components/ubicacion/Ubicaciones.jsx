@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { UbicacionesContext } from "../../context/UbicacionesContext";
 import Ubicacion from "./Ubicacion";
 import "./Ubicaciones.css";
 
-const Ubicaciones = ({ ubicaciones }) => {
+const Ubicaciones = () => {
+  const { ubicaciones } = useContext(UbicacionesContext)
   console.log(ubicaciones);
   return (
     <div className="grid">
